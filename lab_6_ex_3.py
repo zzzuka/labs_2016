@@ -84,6 +84,7 @@ data = np.array(data)
 #7
 plt.subplot(221)
 plt.imshow(data, cmap = plt.get_cmap('gray'))
+plt.title(r'$Before$')
 
 
 #8
@@ -91,6 +92,7 @@ plt.subplot(222)
 N = 100
 values = [data.flatten()]
 plt.hist(values, bins=100)
+plt.title(r'$Image hist before visualisation$')
 
 percentiles = get_percentile(values, 5)
 new_data = values_equalization(data.flatten(), percentiles, add_random = True)
@@ -99,12 +101,14 @@ final = new_data.reshape(200,267)
 #9
 plt.subplot(223)
 plt.imshow(final, cmap = plt.get_cmap('gray'))
+plt.title(r'$After$')
 
 #10
 plt.subplot(224)
 N = 100
 values = [final]
 plt.hist(values, bins=100)
+plt.title(r'$Image hist after equalization$')
 plt.show()
 
 #12
