@@ -6,5 +6,4 @@ for arg in range(1, len(sys.argv)):
         s += int(sys.argv[arg])
     except ValueError:
         pass
-print(s)
-sys.exit()
+sys.exit(s)
